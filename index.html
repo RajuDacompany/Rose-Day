@@ -2,29 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Rose Day❤️</title>
+  <title>Happy Rose Day ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="container">
-    <h1>🌹 Happy Rose Day Love 🌹</h1>
-    <h2>Ms.Dekha Jabe❤️</h2>
+    <h1>🌹 Happy Rose Day, Love 🌹</h1>
+    <h2>Ms. Dekha Jabe ❤️</h2>
 
     <p class="message">
-      Hi baby i just want to express my love for you through this website babe❤️ <br>
-      Tumi amr life er ekta bishon r ekmatro ful jake ami konodin o murjateh debona🥺❤️
+      Hi baby, I just want to express my love for you through this website babe ❤️<br>
+      Tumi amar life er ekta bishon r ekmatro ful jake ami konodin o murjateh debona 🥺❤️
     </p>
 
-    <button onclick="showSurprise()">Click for a Surprise 🌹</button>
+    <!-- ONE CLICK: music + surprise -->
+    <button onclick="playMusic(); showSurprise()">
+      Click for a Surprise 🌹
+    </button>
 
     <div id="surprise" class="hidden">
       <img src="rose.jpg" alt="Rose">
-      <p class="final-text">
-        I’m so lucky to have you 💖<br>
-        Will you always stay with me?
-      </p>
+
+      <!-- typing text controlled by JS -->
+      <p class="final-text" id="typing"></p>
     </div>
+  </div>
+
+  <!-- 🎶 Romantic Song: Channa Ve (hidden YouTube player) -->
+  <div id="musicBox" class="hidden">
+    <iframe
+      id="ytMusic"
+      width="0"
+      height="0"
+      src=""
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
   </div>
 
   <script src="script.js"></script>
