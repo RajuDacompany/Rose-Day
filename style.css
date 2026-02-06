@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow-y: auto;
+  transition: background 1s ease;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: white;
+  color: #ff4d6d;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.hidden {
+  display: none;
+}
+
+/* 🌹 IMAGE RESPONSIVE FIX */
+#surprise img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 20px auto 0;
+  display: block;
+  border-radius: 15px;
+}
+
+.final-text {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.2rem; }
+  .message { font-size: 1rem; }
+  .container { padding: 25px; }
+}
