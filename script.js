@@ -1,12 +1,14 @@
 let rainStarted = false;
 
-// 🎶 PLAY ROMANTIC SONG (Channa Ve)
+// 🎶 PLAY ROMANTIC SONG (Channa Ve – laptop safe)
 function playMusic() {
   const yt = document.getElementById("ytMusic");
 
-  // Channa Ve – Bhoot (YouTube autoplay + loop)
+  // IMPORTANT:
+  // - removed loop (loop breaks autoplay on desktop)
+  // - added playsinline + origin for browser trust
   yt.src =
-    "https://www.youtube.com/embed/2xvKQ9K8D5Y?autoplay=1&loop=1&playlist=2xvKQ9K8D5Y";
+    "https://www.youtube.com/embed/2xvKQ9K8D5Y?autoplay=1&playsinline=1&rel=0";
 
   document.getElementById("musicBox").classList.remove("hidden");
 }
@@ -48,8 +50,7 @@ function startRain() {
 
       emoji.style.left = Math.random() * 100 + "vw";
       emoji.style.fontSize = Math.random() * 25 + 20 + "px";
-      emoji.style.animationDuration =
-        Math.random() * 2 + 2 + "s";
+      emoji.style.animationDuration = Math.random() * 2 + 2 + "s";
 
       document.body.appendChild(emoji);
 
@@ -58,7 +59,7 @@ function startRain() {
   }, 150);
 }
 
-// 💫 FALLING ANIMATION STYLE
+// 💫 FALLING ANIMATION STYLE (inject once)
 const style = document.createElement("style");
 style.innerHTML = `
 .emoji {
