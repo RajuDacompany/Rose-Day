@@ -1,16 +1,12 @@
 let rainStarted = false;
 
-// 🎶 PLAY ROMANTIC SONG (Channa Ve – laptop safe)
+// 🎶 PLAY BACKGROUND MUSIC (MP3 – BEST & STABLE)
 function playMusic() {
-  const yt = document.getElementById("ytMusic");
-
-  // IMPORTANT:
-  // - removed loop (loop breaks autoplay on desktop)
-  // - added playsinline + origin for browser trust
-  yt.src =
-    "https://www.youtube.com/embed/2xvKQ9K8D5Y?autoplay=1&playsinline=1&rel=0";
-
-  document.getElementById("musicBox").classList.remove("hidden");
+  const audio = document.getElementById("bgMusic");
+  audio.volume = 0.5; // soft romantic volume
+  audio.play().catch(err => {
+    console.log("Audio play blocked:", err);
+  });
 }
 
 // SHOW SURPRISE (ONE CLICK ONLY)
@@ -53,13 +49,12 @@ function startRain() {
       emoji.style.animationDuration = Math.random() * 2 + 2 + "s";
 
       document.body.appendChild(emoji);
-
       setTimeout(() => emoji.remove(), 5000);
     }
   }, 150);
 }
 
-// 💫 FALLING ANIMATION STYLE (inject once)
+// 💫 FALLING ANIMATION STYLE
 const style = document.createElement("style");
 style.innerHTML = `
 .emoji {
