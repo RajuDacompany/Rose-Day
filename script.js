@@ -55,16 +55,28 @@ function startRain() {
 
 // ❤️ YES CLICKED → FULL HEART RAIN
 function yesAnswer() {
-  document.getElementById("choiceBox").style.display = "none";
-  document.getElementById("wrongMsg").style.display = "none";
+  const typingEl = document.getElementById("typing");
+  const choiceBox = document.getElementById("choiceBox");
+  const wrongMsg = document.getElementById("wrongMsg");
 
+  choiceBox.style.display = "none";
+  wrongMsg.style.display = "none";
+
+  // Romantic message
+  typingEl.innerHTML = `
+    <span style="font-size:2.2rem;">
+      I love you ❤️
+    </span>
+  `;
+
+  // Heavy heart rain
   setInterval(() => {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 20; i++) {
       const heart = document.createElement("div");
       heart.className = "emoji";
       heart.innerHTML = "❤️";
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = Math.random() * 30 + 25 + "px";
+      heart.style.fontSize = Math.random() * 40 + 25 + "px";
       heart.style.animationDuration = Math.random() * 2 + 1 + "s";
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 4000);
