@@ -1,12 +1,10 @@
 let rainStarted = false;
 
-// 🎶 PLAY BACKGROUND MUSIC (MP3 – BEST & STABLE)
+// 🎶 PLAY BACKGROUND MUSIC
 function playMusic() {
   const audio = document.getElementById("bgMusic");
-  audio.volume = 0.5; // soft romantic volume
-  audio.play().catch(err => {
-    console.log("Audio play blocked:", err);
-  });
+  audio.volume = 0.6;
+  audio.play().catch(err => console.log(err));
 }
 
 // SHOW SURPRISE (ONE CLICK ONLY)
@@ -21,7 +19,7 @@ function showSurprise() {
   }
 }
 
-// ✍️ TYPING EFFECT
+// ✍️ TYPING EFFECT TEXT
 const text = "I’m so lucky to have you 💖🌹\nWill you always stay with me?";
 let i = 0;
 
@@ -33,25 +31,50 @@ function typeText() {
     typingEl.innerHTML += text[i] === "\n" ? "<br>" : text[i];
     i++;
     setTimeout(typeText, 80);
+  } else {
+    // Show YES / NO buttons after typing finishes
+    document.getElementById("choiceBox").classList.remove("hidden");
   }
 }
 
-// 🌧️🌹 HEAVY HEART + ROSE RAIN
+// 🌧️🌹 NORMAL BACKGROUND RAIN
 function startRain() {
   setInterval(() => {
-    for (let j = 0; j < 6; j++) {
+    for (let j = 0; j < 4; j++) {
       const emoji = document.createElement("div");
       emoji.className = "emoji";
       emoji.innerHTML = Math.random() > 0.4 ? "🌹" : "❤️";
-
       emoji.style.left = Math.random() * 100 + "vw";
-      emoji.style.fontSize = Math.random() * 25 + 20 + "px";
-      emoji.style.animationDuration = Math.random() * 2 + 2 + "s";
-
+      emoji.style.fontSize = Math.random() * 20 + 20 + "px";
+      emoji.style.animationDuration = Math.random() * 3 + 3 + "s";
       document.body.appendChild(emoji);
-      setTimeout(() => emoji.remove(), 5000);
+      setTimeout(() => emoji.remove(), 6000);
     }
-  }, 150);
+  }, 300);
+}
+
+// ❤️ YES CLICKED → FULL HEART RAIN
+function yesAnswer() {
+  document.getElementById("choiceBox").style.display = "none";
+  document.getElementById("wrongMsg").style.display = "none";
+
+  setInterval(() => {
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement("div");
+      heart.className = "emoji";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 30 + 25 + "px";
+      heart.style.animationDuration = Math.random() * 2 + 1 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }
+  }, 200);
+}
+
+// ❌ NO CLICKED → WRONG INPUT
+function noAnswer() {
+  document.getElementById("wrongMsg").classList.remove("hidden");
 }
 
 // 💫 FALLING ANIMATION STYLE

@@ -19,29 +19,29 @@
 
     <!-- ONE CLICK: music + surprise -->
     <button onclick="playMusic(); showSurprise()">
-      Click for a Surprise 🌹
-    </button>
+  Click for a Surprise 🌹
+</button>
+
 
     <div id="surprise" class="hidden">
       <img src="rose.jpg" alt="Rose">
-
-      <!-- typing text controlled by JS -->
       <p class="final-text" id="typing"></p>
+
+<div id="choiceBox" class="hidden">
+  <button class="choice yes" onclick="yesAnswer()">Yes ❤️</button>
+  <button class="choice no" onclick="noAnswer()">No 💔</button>
+</div>
+
+<p id="wrongMsg" class="hidden">❌ Wrong input 😠❤️</p>
     </div>
   </div>
 
-  <!-- 🎶 Romantic Song: Channa Ve (VISIBLE tiny player for laptop autoplay) -->
-  <div id="musicBox" class="hidden">
-    <iframe
-      id="ytMusic"
-      width="220"
-      height="124"
-      src=""
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <!-- 🎶 BACKGROUND MUSIC (HIDDEN) -->
+  <!-- 🎶 Background Romantic Tune -->
+<!-- 🎶 Background Romantic Music -->
+<audio id="bgMusic" preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2022/08/02/audio_884fe92f35.mp3" type="audio/mpeg">
+</audio>
 
   <script src="script.js"></script>
 </body>
